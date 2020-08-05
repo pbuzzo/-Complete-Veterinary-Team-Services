@@ -1,0 +1,28 @@
+{% extends 'cal/base.html' %}
+
+{% block title %}
+Event
+{% endblock %}
+
+{% block content %}
+<div class="clearfix">
+  <a class="btn btn-info left" href="{% url 'cal:calendar' %}"> Calendar </a>
+</div>
+
+
+{% if event.tech == request.user %}
+<h3> You are currently assigned to this event. Do you want to drop it from your schedule?</h3>
+<a href="/event/unassign/{{event.id}}">Drop</a>
+{% elif event.tech != request.user %}
+  <form method="post">
+    {% csrf_token %}
+    <table class="form form-table">
+      {{ form }}
+      <tr><td colspan="2"><button type="submit" class="btn btn-info right"> Submit </button></td></tr>
+    </table>
+  </form>
+  {% if request.user.boolean %}
+    <a href="/event/delete/{{event.id}}">Delete Post</a>
+  {% endif %}
+{% endif %}
+{% endblock %}

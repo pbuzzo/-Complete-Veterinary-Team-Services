@@ -1,0 +1,21 @@
+{% extends 'cal/base.html' %}
+{% block content %}
+
+    <div class="index-div" style="width: 70%; height: auto; margin-top: 2rem; margin-left: 2rem;">
+        <h5>Representative: </h5>{{member_info.name}}<br>
+        {% if member_info.headshot %}
+            <img style="border-radius: 2rem;" height="300" src='/{{member_info.headshot.url}}' >
+        {% elif not member_info.headshot %}
+            <svg style="border-radius: 2rem;" height="300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><rect height="100%" fill="#55595c"/></svg>
+        {% endif %}
+        {% comment %} <img height=300 src='/media/{{member_info.headshot}}' ><br> {% endcomment %}
+        <h5>LinkedIn: </h5><a href="{{member_info.linked}}">{{member_info.linkedin}}</a><br>
+        <h5>Bio: </h5>{{member_info.bio}}<br>
+        {% if request.user.name == member_info.name %}
+            <button><a href="{% url 'edit_tech' member_info.id %}">Edit User</a></button>
+        {% elif not user.is_authenticated %}
+            <button><a href="{% url 'signin' %}">Sign In To Interact With This User!</a></button>
+        {% endif %}
+    </div>
+
+{% endblock %}

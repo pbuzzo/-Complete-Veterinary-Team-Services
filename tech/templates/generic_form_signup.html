@@ -1,0 +1,24 @@
+{% extends 'cal/base.html' %}
+
+{% block title %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <!-- Static Header -->
+                <div class="header-text">
+                    <h3 class="signup-header">Sign Up Today!</h3>
+                    <div class="signup-div">
+                    <form action="" method='post' enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" value='Submit!'>
+                    </form>
+                </div>
+                </div><!-- /header-text -->
+            </div>
+            <div class="col-md-7 pull-right">
+                <img style="margin-top: 60px;" src="images/header-man.png" class="img-responsive" alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}

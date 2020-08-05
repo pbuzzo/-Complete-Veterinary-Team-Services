@@ -1,0 +1,6 @@
+Dear ${PERSON_NAME}, 
+
+We are reaching out to because your shift that was created for ${VET} on ${START_TIME} dropped and is now available again. 
+
+Yours Truly,
+CVTS Support

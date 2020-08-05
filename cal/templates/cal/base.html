@@ -1,0 +1,130 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+    crossorigin="anonymous">
+  
+  {% block style_base %}
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" href="{% static 'cal/css/styles.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'cal/css/light.css' %}">
+    {% endblock %}
+  <title class="cvts-header">CVTS Scheduler</title>
+</head>
+<body>
+    <header class="main-header">
+        
+        <!-- /////////////////////////////////////////Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#startupNavbar" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation ">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/"><img src="/static/img/cvtslogo.png" style="height: 10%; width: 17%;" alt="/static/img/logo.png" height="26"></a>
+    <div class="collapse navbar-collapse" id="startupNavbar">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0 ">
+            {% if user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/tech/{{request.user.id}}">My Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/calendar/">Find Shifts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/calendar/">My Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/notifications/">Notifications</a>
+                </li>
+                {% if user.boolean %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/addvet/">Add Vet</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="btn btn-primary" href="/signout/">Sign Out</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="btn btn-primary" style="margin-right: 0.25rem;" href="/signin/">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-primary" style="margin-left: 0.25rem;" href="/signup/">Sign Up</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+  </nav>
+        <!-- Navigation -->
+    {% block title %}
+    {% endblock %}
+    </header>
+  {% comment %} <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#startupNavbar" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation ">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/"><img src="/static/img/cvtslogo.png" style="height: 10%; width: 17%;" alt="/static/img/logo.png" height="26"></a>
+    <div class="collapse navbar-collapse" id="startupNavbar">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0 ">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tech/{{request.user.id}}">My Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/calendar/">Find Shifts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/calendar/">My Calendar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/notifications/">Notifications</a>
+            </li>
+            {% if user.is_authenticated %}
+                {% if user.boolean %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/addvet/">Add Vet</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="btn btn-primary" href="/signout/">Sign Out</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="btn btn-primary" href="/signin/">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-primary" href="/signup/">Sign Up</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+  </nav> {% endcomment %}
+{% comment %} 
+  <h1 class="title">{% block title %}{% endblock %}</h1>
+  <hr> {% endcomment %}
+
+  {% block content %}
+  {% endblock %}
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  {% block script %}
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'cal/base.html' %}
+{% block content %}
+
+    <h4>You have {{ notifications_count }} unread notifications</h4>
+    {% if notification %}
+        <h2>New Notifications: </h2>
+        <ul>
+            {% for notify in notification %}
+                <li>From: {{notify.to_user}} — {{notify.data_created}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if old_notifs %}
+        <h2>Old Notifications: </h2>
+        <ul>
+            {% for notify in old_notifs %}
+                <li>From: {{notify.to_user}} — {{notify.data_created}}</li>
+            {% endfor %}
+        </ul>
+    {% endif%}
+    
+    <a href="/">Home</a>
+
+{% endblock %}

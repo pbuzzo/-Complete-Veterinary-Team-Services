@@ -1,0 +1,11 @@
+Dear ${PERSON_NAME}, 
+
+We are reaching out to confirm your shift at:
+
+* ${VET}
+* ${START_TIME} - ${END_TIME}
+
+We look forward to seeing you! 
+
+Yours Truly, 
+CVTS Support

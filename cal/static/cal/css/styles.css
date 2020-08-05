@@ -1,0 +1,155 @@
+.calendar {
+    width: 90%;
+    margin: auto;
+    font-size: 13px;
+  }
+  
+  .calendar tr, .calendar td {
+    border: 1px solid black;
+  }
+  
+  .calendar th {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .calendar td {
+    width: 200px;
+    height: 150px;
+    padding: 20px 0px 0px 5px;
+  }
+  
+  .month {
+    font-size: 25px;
+  }
+  
+  .date {
+    font-size: 16px;
+  }
+  
+  ul {
+    height: 100%;
+    padding: 0px 5px 0px 20px;
+  }
+  
+  a {
+    color: #17a2b8;
+  }
+
+  /* styles.css */
+
+html,
+body {
+    height: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+tbody {
+  background: white;
+  width: 60% !important;
+  height: 60% !important;
+}
+
+/* index.html */
+.feature-content {
+    padding: 4rem 0;
+    overflow: hidden;
+}
+
+.feature-content img {
+    margin-bottom: -8rem;
+    overflow: hidden;
+    height: auto!important;
+}
+
+/* Media Queries for navbar, responsive design for mobile */
+@media screen and ( min-width: 991px ) {
+    .feature-content {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.pcimage img {
+    width: 50%;
+    height: 50%;
+}
+
+
+/* styled page divs */
+div.index-div {
+    height: 10rem;
+    padding: 2rem;
+    border: 3px solid #142635 !important;
+    border-radius: 2rem;
+    background: white !important;
+
+}
+
+/* Div used for signup, signin */
+div.signup-div {
+    width: 70%;
+    padding: 2rem;
+    border: 3px solid #142635 !important;
+    border-radius: 2rem;
+    background: white !important;
+}
+
+div.post-div {
+    width: 70%;
+    height: 50%;
+    padding: 2rem;
+    border: 3px solid #142635 !important;
+    border-radius: 2rem;
+    background: white !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.devs-header {
+    margin-top: 2rem;
+    margin-left: 5.5rem;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.cvts-header {
+  color: white !important;
+  text-shadow: -1px -1px 0 #, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.post-div:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+  }
+
+div.comment_div {
+    border: 1.75px solid #67b8ff;
+    border-radius: 0 2rem 2rem 0;
+    background: rgb(201, 199, 199);
+    padding: 0.5rem;
+    width: 50%; 
+    height: 50%;
+    text-align: left;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+div.comment_div:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+  }
+
+/* Post Div */
+.calendar-header {
+  color: white;
+  text-shadow: 2px 2px 3px black;
+}
+
+.signup-header {
+  color: white;
+  text-shadow: 2px 2px 3px black;
+}
+
